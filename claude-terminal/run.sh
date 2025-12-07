@@ -169,6 +169,11 @@ start_web_terminal() {
         --port "${port}" \
         --interface 0.0.0.0 \
         --writable \
+        --ping-interval 30 \
+        --client-option enableReconnect=true \
+        --client-option reconnect=10 \
+        --client-option reconnectInterval=5 \
+        --client-option keepalive=true \
         bash -c "$launch_command"
 }
 
